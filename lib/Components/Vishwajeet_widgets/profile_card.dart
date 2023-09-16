@@ -6,7 +6,6 @@ class ProfileCard extends StatelessWidget {
       required this.backGroundColor,
       required this.userName,
       required this.isStudent,
-      required this.networkImage,
       required this.std,
       required this.buttonColor,
       required this.onCall,
@@ -17,7 +16,7 @@ class ProfileCard extends StatelessWidget {
   final String userName;
   final bool isStudent;
   final String std;
-  final String networkImage;
+
   final Function onCall;
   final Function onMessage;
   final String image;

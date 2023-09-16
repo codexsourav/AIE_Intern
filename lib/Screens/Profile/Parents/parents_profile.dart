@@ -2,17 +2,17 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
-import '../Components/Abhil_widgets/about_card.dart';
-import '../Components/Abhil_widgets/status_card.dart';
-import '../Components/Abhil_widgets/tile_widget.dart';
-import '../Components/Sourav_widgets/user_contact_info_box.dart';
-import '../Components/Sourav_widgets/user_idinfo_box.dart';
-import '../Components/Vishwajeet_widgets/profile_card.dart';
-import '../Components/Vishwajeet_widgets/search_widget.dart';
-import '../Theme/Colors/appcolors.dart';
+import '../../../Components/Abhil_widgets/about_card.dart';
+import '../../../Components/Abhil_widgets/status_card.dart';
+import '../../../Components/Abhil_widgets/tile_widget.dart';
+import '../../../Components/Sourav_widgets/user_contact_info_box.dart';
+import '../../../Components/Sourav_widgets/user_idinfo_box.dart';
+import '../../../Components/Vishwajeet_widgets/profile_card.dart';
+import '../../../Components/Vishwajeet_widgets/search_widget.dart';
+import '../../../Theme/Colors/appcolors.dart';
 
-class TeacherScreen extends StatelessWidget {
-  TeacherScreen({super.key});
+class ParentProfile extends StatelessWidget {
+  ParentProfile({super.key});
 
   final TextEditingController _controller = TextEditingController();
 
@@ -45,18 +45,17 @@ class TeacherScreen extends StatelessWidget {
                   // Viswajieet Eiget Start
                   Search(
                     controller: _controller,
-                    backGroundLightColor: AppColors.teacherboxcolor,
-                    searchIconColor: AppColors.pinkDarkcolor,
+                    backGroundLightColor: AppColors.parentboxcolor,
+                    searchIconColor: AppColors.parentDarkcolor,
                     onTap: () {},
                   ),
                   const SizedBox(height: 20),
                   ProfileCard(
-                    backGroundColor: AppColors.teacherboxcolor,
+                    backGroundColor: AppColors.parentboxcolor,
                     userName: 'Neetu Goel',
                     isStudent: true,
-                    networkImage: '',
                     std: 'V',
-                    buttonColor: AppColors.pinkDarkcolor,
+                    buttonColor: AppColors.parentDarkcolor,
                     onCall: () {},
                     onMessage: () {},
                     image:
@@ -79,7 +78,7 @@ class TeacherScreen extends StatelessWidget {
                                     fill: true,
                                     activeTextColor: Colors.white,
                                     active: e == texts[tabindex],
-                                    activeColor: AppColors.pinkDarkcolor,
+                                    activeColor: AppColors.parentDarkcolor,
                                   ),
                                 )
                                 .toList(),
@@ -87,12 +86,12 @@ class TeacherScreen extends StatelessWidget {
                       const SizedBox(height: 20),
                       StatusCard(
                           headline: "Class Representative",
-                          bgcolor: AppColors.teacherboxcolor,
+                          bgcolor: AppColors.parentboxcolor,
                           description:
                               "Profound artist and enthusiastic science student"),
                       const SizedBox(height: 20),
                       AboutCard(
-                          bgcolor: AppColors.teacherboxcolor,
+                          bgcolor: AppColors.parentboxcolor,
                           description:
                               "Love to experiment with new ideas, enjoy the process to discovery, I am very enthusiastic to teach new concepts in the field of chemistry")
                     ],
@@ -103,11 +102,11 @@ class TeacherScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   UserIdInfo(
                     onEditClick: () {},
-                    backgroundColor: AppColors.teacherboxcolor,
+                    backgroundColor: AppColors.parentboxcolor,
                   ),
                   const SizedBox(height: 20),
                   UserConatctBox(
-                    backgroundColor: AppColors.teacherboxcolor,
+                    backgroundColor: AppColors.parentboxcolor,
                     onEditClick: () {},
                     emailText: "codexsourav0w@gmail.com",
                     headingText: "Contact",

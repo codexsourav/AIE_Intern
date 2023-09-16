@@ -6,11 +6,13 @@ class Search extends StatelessWidget {
       required this.controller,
       required this.backGroundLightColor,
       required this.searchIconColor,
+      this.onEditingComplete,
       required this.onTap});
   final TextEditingController controller;
   final Color backGroundLightColor;
   final Color searchIconColor;
   final Function onTap;
+  final Function()? onEditingComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class Search extends StatelessWidget {
                   color: backGroundLightColor),
               child: TextField(
                 controller: controller,
+                onEditingComplete: onEditingComplete,
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: TextStyle(color: Colors.grey, fontSize: w * 0.05),

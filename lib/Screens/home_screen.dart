@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:schoolpenintern/Screens/parents_screen.dart';
-import 'package:schoolpenintern/Screens/student_screen.dart';
-import 'package:schoolpenintern/Screens/teacher_screen.dart';
+import 'package:schoolpenintern/Routes/routes_names.dart';
+import 'package:schoolpenintern/Screens/Profile/Parents/parents_profile.dart';
+
+import 'package:schoolpenintern/Screens/Profile/Teacher/teacher_profile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,29 +17,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => StudentScreen(),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed(RoutesName.studentprofile);
                 },
                 child: const Text("Go Student Page")),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => TeacherScreen(),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed(RoutesName.teacherprofile);
                 },
                 child: const Text("Go TeacherScreen Page")),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => ParentsScreen(),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed(RoutesName.parentprofile);
                 },
                 child: const Text("Go ParentsScreen Page")),
           ],

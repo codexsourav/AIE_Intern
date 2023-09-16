@@ -2,22 +2,20 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
-import '../Components/Abhil_widgets/about_card.dart';
-import '../Components/Abhil_widgets/status_card.dart';
-import '../Components/Abhil_widgets/tile_widget.dart';
-import '../Components/Sourav_widgets/invite_parents.dart';
-import '../Components/Sourav_widgets/student_parent_box.dart';
-import '../Components/Sourav_widgets/user_contact_info_box.dart';
-import '../Components/Sourav_widgets/user_idinfo_box.dart';
-import '../Components/Vishwajeet_widgets/profile_card.dart';
-import '../Components/Vishwajeet_widgets/search_widget.dart';
-import '../Theme/Colors/appcolors.dart';
+import '../../../Components/Abhil_widgets/about_card.dart';
+import '../../../Components/Abhil_widgets/status_card.dart';
+import '../../../Components/Abhil_widgets/tile_widget.dart';
+import '../../../Components/Sourav_widgets/user_contact_info_box.dart';
+import '../../../Components/Sourav_widgets/user_idinfo_box.dart';
+import '../../../Components/Vishwajeet_widgets/profile_card.dart';
+import '../../../Components/Vishwajeet_widgets/search_widget.dart';
+import '../../../Theme/Colors/appcolors.dart';
 
-class StudentScreen extends StatelessWidget {
-  StudentScreen({super.key});
+class TeacherProfile extends StatelessWidget {
+  TeacherProfile({super.key});
 
   final TextEditingController _controller = TextEditingController();
-  final Color backGroundColor = Colors.yellow.shade50;
+
   final List<String> texts = [
     "Profile",
     "Academics",
@@ -47,18 +45,17 @@ class StudentScreen extends StatelessWidget {
                   // Viswajieet Eiget Start
                   Search(
                     controller: _controller,
-                    backGroundLightColor: AppColors.studentboxcolor,
-                    searchIconColor: AppColors.studentYellowcolor,
+                    backGroundLightColor: AppColors.teacherboxcolor,
+                    searchIconColor: AppColors.pinkDarkcolor,
                     onTap: () {},
                   ),
                   const SizedBox(height: 20),
                   ProfileCard(
-                    backGroundColor: backGroundColor,
+                    backGroundColor: AppColors.teacherboxcolor,
                     userName: 'Neetu Goel',
                     isStudent: true,
-                    networkImage: '',
                     std: 'V',
-                    buttonColor: AppColors.studentYellowcolor,
+                    buttonColor: AppColors.pinkDarkcolor,
                     onCall: () {},
                     onMessage: () {},
                     image:
@@ -78,23 +75,23 @@ class StudentScreen extends StatelessWidget {
                                 .map(
                                   (e) => TileWidget(
                                     text: e,
+                                    fill: true,
+                                    activeTextColor: Colors.white,
                                     active: e == texts[tabindex],
-                                    activeTextColor:
-                                        AppColors.studentYellowcolor,
-                                    activeColor: AppColors.studentYellowcolor,
+                                    activeColor: AppColors.pinkDarkcolor,
                                   ),
                                 )
                                 .toList(),
                           )),
                       const SizedBox(height: 20),
                       StatusCard(
-                          bgcolor: AppColors.studentboxcolor,
                           headline: "Class Representative",
+                          bgcolor: AppColors.teacherboxcolor,
                           description:
                               "Profound artist and enthusiastic science student"),
                       const SizedBox(height: 20),
                       AboutCard(
-                          bgcolor: AppColors.studentboxcolor,
+                          bgcolor: AppColors.teacherboxcolor,
                           description:
                               "Love to experiment with new ideas, enjoy the process to discovery, I am very enthusiastic to teach new concepts in the field of chemistry")
                     ],
@@ -105,20 +102,16 @@ class StudentScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   UserIdInfo(
                     onEditClick: () {},
-                    backgroundColor: AppColors.studentboxcolor,
+                    backgroundColor: AppColors.teacherboxcolor,
                   ),
                   const SizedBox(height: 20),
                   UserConatctBox(
-                    backgroundColor: AppColors.studentboxcolor,
+                    backgroundColor: AppColors.teacherboxcolor,
                     onEditClick: () {},
                     emailText: "codexsourav0w@gmail.com",
                     headingText: "Contact",
                     locationAddress: "17, Kolkata , West Bengal 700001",
                   ),
-                  const SizedBox(height: 20),
-                  UserParentsBox(data: parents),
-                  const SizedBox(height: 20),
-                  inviteParents(),
                   const SizedBox(height: 20),
                 ],
               )),

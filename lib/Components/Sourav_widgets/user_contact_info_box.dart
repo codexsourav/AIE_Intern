@@ -14,7 +14,7 @@ class UserConatctBox extends StatelessWidget {
   const UserConatctBox({
     super.key,
     this.backgroundColor = Colors.yellow,
-    this.phoneText = "Contact",
+    this.phoneText = "+91 1234567890",
     this.emailText = "UserIdName",
     this.locationAddress = "Password",
     this.headingText = "Contact",
