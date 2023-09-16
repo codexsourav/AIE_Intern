@@ -1,16 +1,19 @@
-# schoolpenintern
+It's great to see that you have a team in place and a plan for dividing the work on your project. Here's a breakdown of the tasks assigned to each team member:
 
-A new Flutter project.
+**Vishwajeet Bharti:**
+- Profile Card
+- Searchbox
 
-## Getting Started
+**Adhill Latheef:**
+- Tabview
+- Status Card
+- About Card
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Sourav Bapari:**
+- User ID & Password components
+- Contact components
+- Parents Details components
+- Invite Card
+- Collect All Codes From Team
+- Merging all screens
+- Fixing some issues
