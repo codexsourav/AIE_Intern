@@ -1,4 +1,4 @@
-import 'package:learnbloc/src/data/response/status.dart';
+import 'package:schoolpenintern/data/response/status.dart';
 
 class ApiResponse<T> {
   Status? status;
