@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:schoolpenintern/Screens/home_screen.dart';
+import 'package:schoolpenintern/Routes/app_routes.dart';
+import 'package:schoolpenintern/Routes/routes_names.dart';
 import 'Theme/themedata.dart';
 
 class Initializeapp {
@@ -26,10 +27,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "AIE Intern",
       debugShowCheckedModeBanner: false,
       theme: appTheme,
       themeMode: ThemeMode.light,
-      home: const HomeScreen(),
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: RoutesName.home,
     );
   }
 }
