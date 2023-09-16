@@ -6,7 +6,7 @@ ThemeData? appTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.white,
-    iconTheme: IconThemeData(color: Colors.green),
+    iconTheme: IconThemeData(color: Colors.black),
     elevation: 0,
   ),
   iconButtonTheme: IconButtonThemeData(
