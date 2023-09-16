@@ -1,10 +1,8 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
+import '../../../../data/Network/api_network.dart';
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
-// ignore: depend_on_referenced_packages
-import 'package:meta/meta.dart';
-
-import '../../../../data/Network/api_network.dart';
 import '../../../../data/model/StudentProfileModel.dart';
 part 'student_profile_event.dart';
 part 'student_profile_state.dart';
@@ -20,6 +18,7 @@ class StudentProfileBloc
         // Request Sever DAta Fetch
         var searchdata = await ApiNetwork.sendGetRequest(event.endpoint);
         List data = jsonDecode(searchdata.body);
+
         // Chack Data VAlidate
         if (data.isNotEmpty) {
           StudentModel studentdata =
@@ -30,6 +29,7 @@ class StudentProfileBloc
           emit(StudentErrorState("No Student Found!"));
         }
       } catch (e) {
+        debugPrint("Error Is => $e");
         emit(
           StudentErrorState("Sumthing Want Wrong!"),
         );
