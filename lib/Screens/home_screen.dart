@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:schoolpenintern/Routes/routes_names.dart';
-import 'package:schoolpenintern/Screens/Profile/Parents/parents_profile.dart';
-
-import 'package:schoolpenintern/Screens/Profile/Teacher/teacher_profile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
