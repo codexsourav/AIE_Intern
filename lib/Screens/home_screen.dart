@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:schoolpenintern/Routes/routes_names.dart';
 import 'package:schoolpenintern/Screens/parents_screen.dart';
 import 'package:schoolpenintern/Screens/student_screen.dart';
 import 'package:schoolpenintern/Screens/teacher_screen.dart';
-import 'package:schoolpenintern/bloc/main_bloc/main_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
