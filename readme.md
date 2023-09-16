@@ -15,5 +15,8 @@ It's great to see that you have a team in place and a plan for dividing the work
 - Parents Details components
 - Invite Card
 - Collect All Codes From Team
-- Merging all screens
-- Fixing some issues
+- Merging all 3 screens 
+- Fixing some issues Team Code
+
+
+Git Repo: https://github.com/codexsourav/AIE_Intern
