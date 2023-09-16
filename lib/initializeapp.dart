@@ -4,8 +4,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:schoolpenintern/Routes/app_routes.dart';
-import 'package:schoolpenintern/Routes/routes_names.dart';
+
+import 'Routes/app_routes.dart';
+import 'Routes/routes_names.dart';
 import 'Theme/themedata.dart';
 
 class Initializeapp {

@@ -5,7 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../data/Network/api_network.dart';
-import '../../../../data/model/StudentModel.dart';
+import '../../../../data/model/StudentProfileModel.dart';
 part 'student_profile_event.dart';
 part 'student_profile_state.dart';
 

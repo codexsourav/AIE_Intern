@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:schoolpenintern/Routes/routes_names.dart';
-import 'package:schoolpenintern/Screens/Profile/Parents/parents_profile.dart';
-import 'package:schoolpenintern/Screens/Profile/Student/bloc/student_profile_bloc.dart';
-import 'package:schoolpenintern/Screens/Profile/Student/student_profile.dart';
-import 'package:schoolpenintern/Screens/home_screen.dart';
-import 'package:schoolpenintern/Screens/Profile/Teacher/teacher_profile.dart';
-import 'package:schoolpenintern/bloc/main_bloc/main_bloc.dart';
 
+import '../Screens/Profile/Parents/parents_profile.dart';
+import '../Screens/Profile/Student/bloc/student_profile_bloc.dart';
+import '../Screens/Profile/Student/student_profile.dart';
+import '../Screens/Profile/Teacher/teacher_profile.dart';
 import '../Screens/SplashScreen.dart';
+import '../Screens/home_screen.dart';
+import '../bloc/main_bloc/main_bloc.dart';
+import 'routes_names.dart';
 
 class AppRoutes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {

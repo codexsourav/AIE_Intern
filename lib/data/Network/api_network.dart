@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
-import 'package:schoolpenintern/data/Network/Config.dart';
+
+import 'config.dart';
 
 class ApiNetwork {
   static Future<dynamic> sendGetRequest(endpoient) async {

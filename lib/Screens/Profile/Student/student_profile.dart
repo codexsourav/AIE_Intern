@@ -3,8 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:schoolpenintern/Screens/Profile/Student/bloc/student_profile_bloc.dart';
-import 'package:schoolpenintern/data/model/StudentModel.dart';
+
 import '../../../Components/Abhil_widgets/about_card.dart';
 import '../../../Components/Abhil_widgets/status_card.dart';
 import '../../../Components/Abhil_widgets/tile_widget.dart';
@@ -15,6 +14,8 @@ import '../../../Components/Sourav_widgets/user_idinfo_box.dart';
 import '../../../Components/Vishwajeet_widgets/profile_card.dart';
 import '../../../Components/Vishwajeet_widgets/search_widget.dart';
 import '../../../Theme/Colors/appcolors.dart';
+import '../../../data/model/StudentProfileModel.dart';
+import 'bloc/student_profile_bloc.dart';
 
 class StudentProfile extends StatefulWidget {
   const StudentProfile({super.key});
@@ -34,8 +35,6 @@ class _StudentProfileState extends State<StudentProfile> {
     "Attendance",
     "Performance"
   ];
-
-  final List<Map<String, dynamic>> parents = [];
 
   final int tabindex = 0;
 
@@ -96,6 +95,7 @@ class _StudentProfileState extends State<StudentProfile> {
                         return Column(
                           children: [
                             const SizedBox(height: 20),
+                            // Profile Card Here ==============
                             ProfileCard(
                               backGroundColor: AppColors.studentboxcolor,
                               userName: state.data.username.toString(),
@@ -113,6 +113,7 @@ class _StudentProfileState extends State<StudentProfile> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                // Tabs  Here ==============
                                 SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: Row(
@@ -130,12 +131,14 @@ class _StudentProfileState extends State<StudentProfile> {
                                           .toList(),
                                     )),
                                 const SizedBox(height: 20),
+                                // Status Card Here ==============
                                 StatusCard(
                                     bgcolor: AppColors.studentboxcolor,
                                     headline: state.data.statusTitle.toString(),
                                     description: state.data.statusDescription
                                         .toString()),
                                 const SizedBox(height: 20),
+                                // About Card Here ==============
                                 AboutCard(
                                     bgcolor: AppColors.studentboxcolor,
                                     description: state.data.personalInfo!.about
@@ -146,12 +149,14 @@ class _StudentProfileState extends State<StudentProfile> {
 
                             // Sourav Widgets Start====
                             const SizedBox(height: 20),
+                            // UserIDPass Card Here ==============
                             UserIdInfo(
                               onEditClick: () {},
                               userIdText: state.data.username.toString(),
                               backgroundColor: AppColors.studentboxcolor,
                             ),
                             const SizedBox(height: 20),
+                            // User Contact Card Here ==============
                             UserConatctBox(
                               backgroundColor: AppColors.studentboxcolor,
                               onEditClick: () {},
@@ -164,9 +169,13 @@ class _StudentProfileState extends State<StudentProfile> {
                                   .toString(),
                             ),
                             const SizedBox(height: 20),
+
+                            // Parent Card Here ==============
                             // No Paraents Data Found ???
                             const UserParentsBox(data: []),
                             const SizedBox(height: 20),
+
+                            // Invite Card Here ==============
                             inviteParents(),
                             const SizedBox(height: 20),
                           ],
