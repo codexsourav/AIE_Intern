@@ -30,7 +30,7 @@ class StudentModel {
     sId = json['_id'];
 
     personalInfo = json['personal_info'] != null
-        ? new PersonalInfo.fromJson(json['personal_info'])
+        ? PersonalInfo.fromJson(json['personal_info'])
         : null;
     statusDescription = json['status_description'];
     statusTitle = json['status_title'];
@@ -41,18 +41,18 @@ class StudentModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
 
-    if (this.personalInfo != null) {
-      data['personal_info'] = this.personalInfo!.toJson();
+    if (personalInfo != null) {
+      data['personal_info'] = personalInfo!.toJson();
     }
-    data['status_description'] = this.statusDescription;
-    data['status_title'] = this.statusTitle;
-    data['user_class'] = this.userClass;
-    data['user_id'] = this.userId;
-    data['user_image'] = this.userImage;
-    data['username'] = this.username;
+    data['status_description'] = statusDescription;
+    data['status_title'] = statusTitle;
+    data['user_class'] = userClass;
+    data['user_id'] = userId;
+    data['user_image'] = userImage;
+    data['username'] = username;
     return data;
   }
 }
@@ -66,14 +66,14 @@ class PersonalInfo {
   PersonalInfo.fromJson(Map<String, dynamic> json) {
     about = json['about'];
     contact =
-        json['contact'] != null ? new Contact.fromJson(json['contact']) : null;
+        json['contact'] != null ? Contact.fromJson(json['contact']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['about'] = this.about;
-    if (this.contact != null) {
-      data['contact'] = this.contact!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['about'] = about;
+    if (contact != null) {
+      data['contact'] = contact!.toJson();
     }
     return data;
   }
@@ -93,10 +93,10 @@ class Contact {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['address'] = this.address;
-    data['email'] = this.email;
-    data['phone'] = this.phone;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['address'] = address;
+    data['email'] = email;
+    data['phone'] = phone;
     return data;
   }
 }
