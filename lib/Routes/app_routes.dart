@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:schoolpenintern/Screens/Chat/ChatHome/ChatHomeScreen.dart';
+import 'package:schoolpenintern/Screens/Chat/ChatMessage/ChatMessageScreen.dart';
+import 'package:schoolpenintern/Screens/Chat/ChatMessage/bloc/chat_message_bloc.dart';
 
 import '../Screens/Profile/Parents/parents_profile.dart';
 import '../Screens/Profile/Student/bloc/student_profile_bloc.dart';
@@ -43,6 +46,20 @@ class AppRoutes {
       case RoutesName.parentprofile:
         return MaterialPageRoute(
           builder: (context) => ParentProfile(),
+        );
+// Chat Home =====================
+      case RoutesName.chatPage:
+        return MaterialPageRoute(
+          builder: (context) => ChatHomeScreen(),
+        );
+
+// Chat message =====================
+      case RoutesName.chatMessagePage:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => ChatMessageBloc(),
+            child: ChatMessageScreen(),
+          ),
         );
 // And Default Screen ###################
       default:

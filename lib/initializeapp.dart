@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: appTheme,
       themeMode: ThemeMode.light,
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: RoutesName.splash,
+      initialRoute: RoutesName.chatPage,
     );
   }
 }
