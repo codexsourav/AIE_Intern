@@ -50,7 +50,7 @@ class ParentAddStepTowState extends State<ParentAddStepTow> {
       var res = await dataProvider.addParentDatabase(context);
       if (res != false) {
         Navigator.of(context).popUntil((route) => route.isFirst);
-        Navigator.of(context).push(
+        Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => ViewProfile(),
           ),
