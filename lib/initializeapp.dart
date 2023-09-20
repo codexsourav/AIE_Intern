@@ -4,9 +4,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 import 'Routes/app_routes.dart';
 import 'Routes/routes_names.dart';
+import 'Screens/Profile/Addprofile/AddProfilePages/Provider/AddUsersProvider.dart';
 import 'Theme/themedata.dart';
 
 class Initializeapp {
@@ -18,7 +20,14 @@ class Initializeapp {
       statusBarBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.dark,
     ));
-    startApp(const MyApp());
+    startApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => AddUsersProvider()),
+        ],
+        child: MyApp(),
+      ),
+    );
   }
 }
 
@@ -33,7 +42,7 @@ class MyApp extends StatelessWidget {
       theme: appTheme,
       themeMode: ThemeMode.light,
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: RoutesName.chatPage,
+      initialRoute: RoutesName.home,
     );
   }
 }

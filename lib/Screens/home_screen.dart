@@ -28,6 +28,26 @@ class HomeScreen extends StatelessWidget {
                   Navigator.of(context).pushNamed(RoutesName.parentprofile);
                 },
                 child: const Text("Go ParentsScreen Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RoutesName.addstudentprofile);
+                },
+                child: const Text("Add New Student Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RoutesName.addteacherprofile);
+                },
+                child: const Text("Add New Teacher Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RoutesName.chatPage);
+                },
+                child: const Text("Chat Page")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RoutesName.addparentprofile);
+                },
+                child: const Text("Add Parent Page")),
           ],
         ),
       ),

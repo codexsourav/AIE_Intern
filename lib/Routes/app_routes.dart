@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:schoolpenintern/Screens/Chat/ChatHome/ChatHomeScreen.dart';
-import 'package:schoolpenintern/Screens/Chat/ChatMessage/ChatMessageScreen.dart';
-import 'package:schoolpenintern/Screens/Chat/ChatMessage/bloc/chat_message_bloc.dart';
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddParentScreens/ParentAddStepOne.dart';
+
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddStudentScreens/AddStudentStepOne.dart';
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddTeacherScreens/AddTeacherStepOne.dart';
 
 import '../Screens/Profile/Parents/parents_profile.dart';
-import '../Screens/Profile/Student/bloc/student_profile_bloc.dart';
-import '../Screens/Profile/Student/student_profile.dart';
 import '../Screens/Profile/Teacher/teacher_profile.dart';
+import '../Screens/Profile/ViewProfile/bloc/student_profile_bloc.dart';
+import '../Screens/Profile/ViewProfile/view_profile.dart';
 import '../Screens/SplashScreen.dart';
 import '../Screens/home_screen.dart';
 import '../bloc/main_bloc/main_bloc.dart';
@@ -34,7 +36,7 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => StudentProfileBloc(),
-            child: const StudentProfile(),
+            child: const ViewProfile(),
           ),
         );
 // Teacher Profile ====================
@@ -53,14 +55,24 @@ class AppRoutes {
           builder: (context) => ChatHomeScreen(),
         );
 
-// Chat message =====================
-      case RoutesName.chatMessagePage:
+// Add Student Home =====================
+      case RoutesName.addstudentprofile:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => ChatMessageBloc(),
-            child: ChatMessageScreen(),
-          ),
+          builder: (context) => AddStudentStepOne(),
         );
+
+// Add Teacher Home =====================
+      case RoutesName.addteacherprofile:
+        return MaterialPageRoute(
+          builder: (context) => AddTeacherStepOne(),
+        );
+
+// Add Teacher Home =====================
+      case RoutesName.addparentprofile:
+        return MaterialPageRoute(
+          builder: (context) => ParentAddStepOne(),
+        );
+
 // And Default Screen ###################
       default:
         return MaterialPageRoute(

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../Theme/Colors/appcolors.dart';
 
 class ChatInput extends StatelessWidget {
-  const ChatInput({super.key});
+  final controller;
+  final void Function()? sendMessage;
+
+  const ChatInput({super.key, this.controller, this.sendMessage});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +23,7 @@ class ChatInput extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: TextField(
+                controller: controller,
                 cursorColor: AppColors.purple,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: 18),
@@ -43,7 +47,7 @@ class ChatInput extends StatelessWidget {
             ),
           ),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: sendMessage,
             backgroundColor: AppColors.purple,
             elevation: 0,
             child: Icon(Icons.send_rounded),

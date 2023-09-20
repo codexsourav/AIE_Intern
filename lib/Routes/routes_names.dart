@@ -5,5 +5,8 @@ class RoutesName {
   static const String parentprofile = "parentprofile";
   static const String teacherprofile = "teacherprofile";
   static const String chatPage = "chatPage";
-  static const String chatMessagePage = "chatMessagePage";
+  // add Pages
+  static const String addstudentprofile = "addstudentprofile";
+  static const String addparentprofile = "addparentprofile";
+  static const String addteacherprofile = "addteacherprofile";
 }
