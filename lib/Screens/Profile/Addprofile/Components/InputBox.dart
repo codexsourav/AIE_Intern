@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Validator/Validate.dart';
 
-class InputBox extends StatelessWidget {
+class InputBox extends StatefulWidget {
   final TextEditingController? controller;
   final String title;
   final String hintText;
@@ -14,10 +15,11 @@ class InputBox extends StatelessWidget {
   final EdgeInsets? padding;
   final double borderRadius;
   final int maxLines;
-  final bool secure;
+  bool secure;
+  bool showeye;
   final int? maxlen;
 
-  const InputBox({
+  InputBox({
     super.key,
     this.controller,
     this.title = 'Name',
@@ -31,8 +33,20 @@ class InputBox extends StatelessWidget {
     this.maxLines = 1,
     this.keyupText,
     this.secure = false,
+    this.showeye = false,
     this.maxlen,
   });
+
+  @override
+  State<InputBox> createState() => _InputBoxState();
+}
+
+class _InputBoxState extends State<InputBox> {
+  @override
+  void initState() {
+    widget.showeye = widget.secure;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +55,11 @@ class InputBox extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: padding,
+          padding: widget.padding,
           child: Opacity(
             opacity: 0.80,
             child: Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 color: Color(0xFF383838),
                 fontSize: 14,
@@ -57,13 +71,13 @@ class InputBox extends StatelessWidget {
           ),
         ),
         TextFormField(
-          keyboardType: textInputType,
-          controller: controller,
-          cursorColor: cursorColor,
-          maxLines: maxLines,
-          onChanged: keyupText,
-          obscureText: secure,
-          maxLength: maxlen,
+          keyboardType: widget.textInputType,
+          controller: widget.controller,
+          cursorColor: widget.cursorColor,
+          maxLines: widget.maxLines,
+          onChanged: widget.keyupText,
+          obscureText: widget.secure,
+          maxLength: widget.maxlen,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 20,
@@ -71,12 +85,30 @@ class InputBox extends StatelessWidget {
             ),
             counterText: "",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius),
+              borderRadius: BorderRadius.circular(widget.borderRadius),
               borderSide: BorderSide.none,
             ),
-            fillColor: inputfillColor,
+            fillColor: widget.inputfillColor,
             filled: true,
-            hintText: hintText,
+            hintText: widget.hintText,
+            suffixIcon: widget.showeye
+                ? GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        widget.secure = !widget.secure;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        widget.secure
+                            ? Icons.remove_red_eye
+                            : Icons.remove_red_eye_outlined,
+                        color: widget.cursorColor,
+                      ),
+                    ),
+                  )
+                : null,
             hintStyle: const TextStyle(
               color: Color(0xFFA8A8B1),
               fontSize: 16,
@@ -86,13 +118,13 @@ class InputBox extends StatelessWidget {
             ),
           ),
           validator: (e) {
-            if (validate != null) {
-              return validate!(e);
+            if (widget.validate != null) {
+              return widget.validate!(e);
             }
-            if (title == "Email") {
-              return Validate.fldisValidEmail(e!, title);
+            if (widget.title == "Email") {
+              return Validate.fldisValidEmail(e!, widget.title);
             } else {
-              return Validate.fldempty(e, title);
+              return Validate.fldempty(e, widget.title);
             }
           },
         ),

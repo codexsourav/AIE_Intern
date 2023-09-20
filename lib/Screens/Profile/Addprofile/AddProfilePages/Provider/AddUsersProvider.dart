@@ -139,13 +139,13 @@ class AddUsersProvider extends ChangeNotifier {
           message: "Profile is Successfully Created",
           color: Colors.green,
         );
-        var username = userid;
+        var username = response.data;
         resetFormState();
         return username;
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
         return false;
@@ -161,14 +161,14 @@ class AddUsersProvider extends ChangeNotifier {
         } else {
           showSnackBar(
             context,
-            message: 'Sumtning Want Wrong!',
+            message: 'Sumthing Want Wrong!',
             color: Colors.red,
           );
         }
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
       }
@@ -230,7 +230,7 @@ class AddUsersProvider extends ChangeNotifier {
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
         return false;
@@ -247,14 +247,14 @@ class AddUsersProvider extends ChangeNotifier {
         } else {
           showSnackBar(
             context,
-            message: 'Sumtning Want Wrong!',
+            message: 'Sumthing Want Wrong!',
             color: Colors.red,
           );
         }
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
       }
@@ -310,7 +310,7 @@ class AddUsersProvider extends ChangeNotifier {
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
         return false;
@@ -327,14 +327,14 @@ class AddUsersProvider extends ChangeNotifier {
         } else {
           showSnackBar(
             context,
-            message: 'Sumtning Want Wrong!',
+            message: 'Sumthing Want Wrong!',
             color: Colors.red,
           );
         }
       } else {
         showSnackBar(
           context,
-          message: 'Sumtning Want Wrong!',
+          message: 'Sumthing Want Wrong!',
           color: Colors.red,
         );
       }

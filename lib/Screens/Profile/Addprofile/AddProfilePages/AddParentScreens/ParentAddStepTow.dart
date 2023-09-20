@@ -109,6 +109,19 @@ class ParentAddStepTowState extends State<ParentAddStepTow> {
                   inputfillColor: secColor,
                   title: "User id",
                   controller: uid,
+                  validate: (e) {
+                    if (int.tryParse(e ?? "") != null) {
+                      return "Enter Some characters";
+                    } else if (e!.length <= 5) {
+                      return "Username Min 5 characters";
+                    } else if (!RegExp(r'^[a-zA-Z_][a-zA-Z0-9_-]{5,20}$')
+                        .hasMatch(
+                      e.toString(),
+                    )) {
+                      return 'Invalid username. Must be 5-20 characters';
+                    }
+                    return null;
+                  },
                 ),
               ),
               Form(

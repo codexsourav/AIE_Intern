@@ -2,8 +2,10 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../../../../Helper/snackBarHelper.dart';
+import '../../../../StartupDashBord/utils/client.dart';
 import '../../Components/AddImageBox.dart';
 import '../../Components/AddUsersAppBar.dart';
 import '../../Components/InputBox.dart';
@@ -25,6 +27,13 @@ class AddTeacherStepOne extends StatefulWidget {
 }
 
 class AddTeacherStepOneState extends State<AddTeacherStepOne> {
+  late ProfileController profileController;
+  @override
+  void initState() {
+    profileController = Get.put(ProfileController());
+    super.initState();
+  }
+
   Color themeDark = const Color(0xFFC45162);
   Color secColor = Color.fromARGB(255, 250, 242, 243);
   final GlobalKey<FormState> _formStepone = GlobalKey<FormState>();
@@ -76,17 +85,16 @@ class AddTeacherStepOneState extends State<AddTeacherStepOne> {
 
   @override
   Widget build(BuildContext context) {
+    name.text = profileController.name.value;
     AddUsersProvider setDataProvider = Provider.of<AddUsersProvider>(context);
+    print(setDataProvider.fullname);
     return WillPopScope(
       onWillPop: () async {
-        setDataProvider.resetFormState();
         return true;
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: addUsersAppBar(context, onback: () {
-          setDataProvider.resetFormState();
-        }),
+        appBar: addUsersAppBar(context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

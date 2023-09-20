@@ -5,6 +5,7 @@ import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddPa
 
 import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddStudentScreens/AddStudentStepOne.dart';
 import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddTeacherScreens/AddTeacherStepOne.dart';
+import 'package:schoolpenintern/Screens/StartupDashBord/views/admin_user.dart';
 
 import '../Screens/Profile/Parents/parents_profile.dart';
 import '../Screens/Profile/Teacher/teacher_profile.dart';
@@ -25,6 +26,11 @@ class AppRoutes {
             create: (context) => AppSetUpBloc(),
             child: const SplashScreen(),
           ),
+        );
+// Start Screen ======================
+      case RoutesName.startPage:
+        return MaterialPageRoute(
+          builder: (context) => RoleScreen(),
         );
 // Home Screen =========================
       case RoutesName.home:

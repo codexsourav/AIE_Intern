@@ -17,7 +17,9 @@ import '../../../data/model/StudentProfileModel.dart';
 import 'bloc/student_profile_bloc.dart';
 
 class ViewProfile extends StatefulWidget {
-  const ViewProfile({super.key});
+  final userid;
+
+  const ViewProfile({super.key, this.userid});
 
   @override
   State<ViewProfile> createState() => _ViewProfileState();

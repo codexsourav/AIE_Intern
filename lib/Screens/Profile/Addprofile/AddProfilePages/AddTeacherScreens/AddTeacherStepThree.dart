@@ -54,7 +54,7 @@ class AddTeacherStepThreeState extends State<AddTeacherStepThree> {
         Navigator.of(context).popUntil((route) => route.isFirst);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => ViewProfile(),
+            builder: (context) => ViewProfile(userid: addDataresponse['_id']),
           ),
         );
       }
@@ -112,7 +112,9 @@ class AddTeacherStepThreeState extends State<AddTeacherStepThree> {
                   title: "User id",
                   controller: uid,
                   validate: (e) {
-                    if (e!.length < 5) {
+                    if (int.tryParse(e ?? "") != null) {
+                      return "Enter Some characters";
+                    } else if (e!.length <= 5) {
                       return "Username Min 5 characters";
                     } else if (!RegExp(r'^[a-zA-Z_][a-zA-Z0-9_-]{5,20}$')
                         .hasMatch(

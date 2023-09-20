@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import 'Routes/app_routes.dart';
@@ -36,13 +37,13 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: "AIE Intern",
       debugShowCheckedModeBanner: false,
       theme: appTheme,
       themeMode: ThemeMode.light,
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: RoutesName.home,
+      initialRoute: RoutesName.startPage,
     );
   }
 }

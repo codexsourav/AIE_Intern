@@ -1,9 +1,11 @@
 //  * Created by: Sourav Bapari
 //  * ----------------------------------------------------------------------------
 
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../Helper/snackBarHelper.dart';
+import '../../../../StartupDashBord/utils/client.dart';
 import '../../Components/AddImageBox.dart';
 import '../../Components/AddUsersAppBar.dart';
 import '../../Components/InputBox.dart';
@@ -27,6 +29,13 @@ class AddStudentStepOne extends StatefulWidget {
 }
 
 class AddStudentStepOneState extends State<AddStudentStepOne> {
+  late ProfileController profileController;
+  @override
+  void initState() {
+    profileController = Get.put(ProfileController());
+    super.initState();
+  }
+
   final Color themeDark = const Color(0xFF9163D7);
   final Color secColor = const Color(0x4CE7D8F8);
   final GlobalKey<FormState> _formStepone = GlobalKey<FormState>();
@@ -78,6 +87,7 @@ class AddStudentStepOneState extends State<AddStudentStepOne> {
 
   @override
   Widget build(BuildContext context) {
+    name.text = profileController.name.value;
     AddUsersProvider setDataProvider = Provider.of<AddUsersProvider>(context);
     return WillPopScope(
       onWillPop: () async {

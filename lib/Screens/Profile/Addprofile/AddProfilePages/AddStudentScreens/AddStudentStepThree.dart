@@ -53,9 +53,11 @@ class AddStudentStepThreeState extends State<AddStudentStepThree> {
         Navigator.of(context).popUntil((route) => route.isFirst);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => ViewProfile(),
+            builder: (context) =>
+                ViewProfile(userid: addDataresponse["user_id"]),
           ),
         );
+        print(addDataresponse);
       }
     }
   }
@@ -110,6 +112,19 @@ class AddStudentStepThreeState extends State<AddStudentStepThree> {
                   inputfillColor: secColor,
                   title: "User id",
                   controller: uid,
+                  validate: (e) {
+                    if (int.tryParse(e ?? "") != null) {
+                      return "Enter Some characters";
+                    } else if (e!.length <= 5) {
+                      return "Username Min 5 characters";
+                    } else if (!RegExp(r'^[a-zA-Z_][a-zA-Z0-9_-]{5,20}$')
+                        .hasMatch(
+                      e.toString(),
+                    )) {
+                      return 'Invalid username. Must be 5-20 characters';
+                    }
+                    return null;
+                  },
                 ),
               ),
               Form(

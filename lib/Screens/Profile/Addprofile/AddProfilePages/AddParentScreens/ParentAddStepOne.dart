@@ -2,8 +2,10 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../../../../Helper/snackBarHelper.dart';
+import '../../../../StartupDashBord/utils/client.dart';
 import '../../Components/AddImageBox.dart';
 import '../../Components/PickCalenderDate.dart';
 import '../../Components/PickGender.dart';
@@ -23,6 +25,13 @@ class ParentAddStepOne extends StatefulWidget {
 }
 
 class ParentAddStepOneState extends State<ParentAddStepOne> {
+  late ProfileController profileController;
+  @override
+  void initState() {
+    profileController = Get.put(ProfileController());
+    super.initState();
+  }
+
   Color themeDark = const Color(0xFF56E484);
   Color secColor = const Color(0xFFEEFCF3);
 
@@ -79,6 +88,7 @@ class ParentAddStepOneState extends State<ParentAddStepOne> {
 
   @override
   Widget build(BuildContext context) {
+    name.text = profileController.name.value;
     AddUsersProvider setDataProvider = Provider.of<AddUsersProvider>(context);
 
     return Scaffold(

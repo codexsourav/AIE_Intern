@@ -6,8 +6,8 @@ AppBar addUsersAppBar(context, {bool alowback = true, Function? onback}) {
     elevation: 0,
     leading: IconButton(
       onPressed: () {
-        onback != null ? onback() : null;
         alowback ? Navigator.of(context).pop() : null;
+        onback != null ? onback() : null;
       },
       icon: const Icon(
         Icons.arrow_back_ios_new_rounded,
