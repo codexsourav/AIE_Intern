@@ -116,11 +116,12 @@ class CategoryWidget extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: GoogleFonts.lato(fontSize: 14),
+          style: GoogleFonts.lato(fontSize: 16,color: selectedCol==ConstantColors.textFieldClr?Colors.black:Colors.white),
         )),
         width: 150,
         height: 47,
         decoration: BoxDecoration(
+        
             borderRadius: BorderRadius.circular(30), color: selectedCol),
       ),
     );
