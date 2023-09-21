@@ -2,17 +2,21 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
-import '../../Theme/Colors/appcolors.dart';
 
 class UserParentsBox extends StatelessWidget {
   final List<Map<String, dynamic>>? data;
   final void Function()? onClickAdd;
   final String title;
+  final Color bgcolor;
+  final Color darkcolor;
+
   const UserParentsBox({
     super.key,
     required this.data,
     this.title = "Parent`s Details",
     this.onClickAdd,
+    this.bgcolor = Colors.white,
+    this.darkcolor = Colors.white,
   });
 
   @override
@@ -21,8 +25,7 @@ class UserParentsBox extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-          color: AppColors.studentboxcolor,
-          borderRadius: BorderRadius.circular(30)),
+          color: bgcolor, borderRadius: BorderRadius.circular(30)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +60,7 @@ class UserParentsBox extends StatelessWidget {
                           width: 80,
                           padding: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                              color: AppColors.studentYellowcolor,
+                              color: bgcolor,
                               borderRadius: BorderRadius.circular(50)),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(50),
@@ -94,14 +97,14 @@ class UserParentsBox extends StatelessWidget {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: AppColors.studentYellowLightcolor,
+                        color: darkcolor.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Center(
                         child: Icon(
                           Icons.add,
                           size: 35,
-                          color: AppColors.studentYellowcolor,
+                          color: darkcolor,
                         ),
                       ),
                     ),

@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:schoolpenintern/Screens/Chat/ChatHome/ChatHomeScreen.dart';
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddParentScreens/ParentAddStepOne.dart';
+
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddStudentScreens/AddStudentStepOne.dart';
+import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddTeacherScreens/AddTeacherStepOne.dart';
+import 'package:schoolpenintern/Screens/StartupDashBord/views/admin_user.dart';
+import 'package:schoolpenintern/Screens/Student/home_screen.dart';
 
 import '../Screens/Profile/Parents/parents_profile.dart';
-import '../Screens/Profile/Student/bloc/student_profile_bloc.dart';
-import '../Screens/Profile/Student/student_profile.dart';
 import '../Screens/Profile/Teacher/teacher_profile.dart';
+import '../Screens/Profile/ViewProfile/bloc/student_profile_bloc.dart';
+import '../Screens/Profile/ViewProfile/view_profile.dart';
 import '../Screens/SplashScreen.dart';
 import '../Screens/home_screen.dart';
 import '../bloc/main_bloc/main_bloc.dart';
@@ -21,18 +28,25 @@ class AppRoutes {
             child: const SplashScreen(),
           ),
         );
+// Start Screen ======================
+      case RoutesName.startPage:
+        return MaterialPageRoute(
+          builder: (context) => RoleScreen(),
+        );
+// Start Screen ======================
+      case RoutesName.startPage:
+        return MaterialPageRoute(
+          builder: (context) => RoleScreen(),
+        );
 // Home Screen =========================
       case RoutesName.home:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
-// Student Profile ====================
-      case RoutesName.studentprofile:
+// Student HomeSCree OFter Login ====================
+      case RoutesName.studenthome:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => StudentProfileBloc(),
-            child: const StudentProfile(),
-          ),
+          builder: (context) => StudentHomeScreen(),
         );
 // Teacher Profile ====================
       case RoutesName.teacherprofile:
@@ -44,6 +58,30 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => ParentProfile(),
         );
+// Chat Home =====================
+      case RoutesName.chatPage:
+        return MaterialPageRoute(
+          builder: (context) => ChatHomeScreen(),
+        );
+
+// Add Student Home =====================
+      case RoutesName.addstudentprofile:
+        return MaterialPageRoute(
+          builder: (context) => AddStudentStepOne(),
+        );
+
+// Add Teacher Home =====================
+      case RoutesName.addteacherprofile:
+        return MaterialPageRoute(
+          builder: (context) => AddTeacherStepOne(),
+        );
+
+// Add Teacher Home =====================
+      case RoutesName.addparentprofile:
+        return MaterialPageRoute(
+          builder: (context) => ParentAddStepOne(),
+        );
+
 // And Default Screen ###################
       default:
         return MaterialPageRoute(
