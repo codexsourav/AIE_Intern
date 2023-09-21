@@ -69,7 +69,7 @@ class Login extends StatelessWidget {
                         profileController.logIn(context, userIdController.text,
                             passWdController.text);
                       },
-                      text: ConstantString.str6)),
+                      text: "Login")),
             )
           ],
         ),

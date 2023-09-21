@@ -34,7 +34,7 @@ class FillName extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: 25, top: MediaQuery.of(context).size.height * 0.04),
+                    left: MediaQuery.of(context).size.width*0.07, top: MediaQuery.of(context).size.height * 0.04),
                 child: Text(
                   ConstantString.str4,
                   textAlign: TextAlign.center,
@@ -56,7 +56,7 @@ class FillName extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.15),
+                    top: MediaQuery.of(context).size.height * 0.13),
                 child: Center(
                     child: CustomButton(
                         callback: () {

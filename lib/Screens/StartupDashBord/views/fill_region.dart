@@ -33,8 +33,8 @@ class FillRegion extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                left: 30,
+              padding:  EdgeInsets.only(
+                left: MediaQuery.of(context).size.width*0.07,
               ),
               child: Text(
                 "Welcome ${profileController.name.value},\nWhat is your region?",
