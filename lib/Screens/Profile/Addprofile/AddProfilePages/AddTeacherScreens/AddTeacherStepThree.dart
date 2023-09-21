@@ -12,7 +12,7 @@ import '../../../../../Helper/snackBarHelper.dart';
 
 import '../../Components/InputBox.dart';
 import '../../Components/SubmitButton.dart';
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 
 class AddTeacherStepThree extends StatefulWidget {
   const AddTeacherStepThree({super.key});
@@ -48,7 +48,7 @@ class AddTeacherStepThreeState extends State<AddTeacherStepThree> {
         color: Colors.red,
       );
     } else {
-      var addDataresponse = await dataProvider.addStudentDatabase(context);
+      var addDataresponse = await dataProvider.addTeacherDatabase(context);
       if (addDataresponse != false) {
         // pop all three steps
         Navigator.of(context).popUntil((route) => route.isFirst);
@@ -113,7 +113,7 @@ class AddTeacherStepThreeState extends State<AddTeacherStepThree> {
                   controller: uid,
                   validate: (e) {
                     if (int.tryParse(e ?? "") != null) {
-                      return "Enter Some characters";
+                      return "Enter A characters";
                     } else if (e!.length <= 5) {
                       return "Username Min 5 characters";
                     } else if (!RegExp(r'^[a-zA-Z_][a-zA-Z0-9_-]{5,20}$')

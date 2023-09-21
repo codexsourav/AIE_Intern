@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
+import '../Providers/UserProfileProvider.dart';
 import '../Routes/routes_names.dart';
 import '../bloc/main_bloc/main_bloc.dart';
 
@@ -21,9 +24,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AppSetUpBloc, InitialStates>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is HomeScreenState) {
-          Navigator.of(context).pushReplacementNamed(RoutesName.home);
+          Navigator.of(context).popUntil((route) => route.isFirst);
+          Navigator.of(context).pushReplacementNamed(RoutesName.startPage);
+        } else if (state is StudentScreenState) {
+          await Provider.of<UserProfileProvider>(context, listen: false)
+              .getUserProfileData(userid: state.username, roal: state.roal);
+          Navigator.of(context).popUntil((route) => route.isFirst);
+          Navigator.of(context).pushReplacementNamed(RoutesName.studenthome);
+        } else {
+          Navigator.of(context).pushReplacementNamed(RoutesName.startPage);
         }
       },
       child: Scaffold(

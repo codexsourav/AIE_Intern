@@ -29,6 +29,8 @@ dependencies:
   flutter_animation_progress_bar: ^2.3.1
   get: ^4.6.6
   google_fonts: ^5.1.0
+  flutter_svg: ^2.0.7
+  shared_preferences: ^2.2.1
 
 
 
@@ -53,6 +55,18 @@ flutter:
   assets:
     - assets/
     - assets/initimages/
+    - assets/images/
+    - assets/images/student_section_images/
+    - assets/images/student_section_images/homepage_images/
+    - assets/images/student_section_images/homepage_images/calender_images/
+    - assets/images/student_section_images/homepage_images/header_images/
+    - assets/images/student_section_images/homepage_images/notice_images/
+    - assets/images/student_section_images/homepage_images/syllabus_images/
+    - assets/images/student_section_images/homepage_images/teachers_notes_images/
+    - assets/images/student_section_images/homepage_images/todays_classes_images/
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

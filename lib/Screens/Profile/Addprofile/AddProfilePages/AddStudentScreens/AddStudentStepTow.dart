@@ -10,7 +10,7 @@ import '../../Components/InputBox.dart';
 
 import '../../Components/SelectOptionDropDown.dart';
 import '../../Components/SubmitButton.dart';
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 import '../../Components/StepsBar.dart';
 
 import 'AddStudentStepThree.dart';

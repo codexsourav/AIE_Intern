@@ -12,7 +12,7 @@ import '../../Components/InputBox.dart';
 import '../../Components/PickGender.dart';
 import '../../Components/SubmitButton.dart';
 
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 import '../../Components/StepsBar.dart';
 
 import 'package:flutter/material.dart';

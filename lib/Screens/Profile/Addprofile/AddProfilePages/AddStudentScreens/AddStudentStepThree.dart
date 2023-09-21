@@ -2,15 +2,16 @@
 //  * ----------------------------------------------------------------------------
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../Helper/snackBarHelper.dart';
-import '../../../ViewProfile/view_profile.dart';
+import '../../../../StartupDashBord/views/login_screen.dart';
 import '../../Components/AddUsersAppBar.dart';
 import '../../Components/InputBox.dart';
 import '../../Components/SubmitButton.dart';
 import '../../Validator/Validate.dart';
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 import '../../Components/StepsBar.dart';
 
 class AddStudentStepThree extends StatefulWidget {
@@ -50,14 +51,7 @@ class AddStudentStepThreeState extends State<AddStudentStepThree> {
       var addDataresponse = await dataProvider.addStudentDatabase(context);
       if (addDataresponse != false) {
         // pop all three steps
-        Navigator.of(context).popUntil((route) => route.isFirst);
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) =>
-                ViewProfile(userid: addDataresponse["user_id"]),
-          ),
-        );
-        print(addDataresponse);
+        Get.offAll(Login());
       }
     }
   }

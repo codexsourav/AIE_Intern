@@ -7,7 +7,7 @@ import 'package:schoolpenintern/Routes/routes_names.dart';
 import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddParentScreens/ParentAddStepOne.dart';
 import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddStudentScreens/AddStudentStepOne.dart';
 import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/AddTeacherScreens/AddTeacherStepOne.dart';
-import 'package:schoolpenintern/Screens/Profile/Addprofile/AddProfilePages/Provider/AddUsersProvider.dart';
+import 'package:schoolpenintern/Providers/AddUsersProvider.dart';
 
 import '../constants/ConstantColors.dart';
 import '../constants/ConstantStrings.dart';

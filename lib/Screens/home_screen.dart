@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(RoutesName.studentprofile);
+                  Navigator.of(context).pushNamed(RoutesName.studenthome);
                 },
                 child: const Text("Go Student Page")),
             ElevatedButton(

@@ -11,7 +11,8 @@ import '../../Components/AddUsersAppBar.dart';
 import '../../Components/InputBox.dart';
 import '../../Components/SubmitButton.dart';
 
-import '../Provider/AddUsersProvider.dart';
+import '../AddStudentScreens/AddStudentStepTow.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 import '../../Components/StepsBar.dart';
 
 import '../../Components/PickCalenderDate.dart';
@@ -87,14 +88,16 @@ class AddTeacherStepOneState extends State<AddTeacherStepOne> {
   Widget build(BuildContext context) {
     name.text = profileController.name.value;
     AddUsersProvider setDataProvider = Provider.of<AddUsersProvider>(context);
-    print(setDataProvider.fullname);
     return WillPopScope(
       onWillPop: () async {
+        setDataProvider.resetFormState();
         return true;
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: addUsersAppBar(context),
+        appBar: addUsersAppBar(context, onback: () {
+          setDataProvider.resetFormState();
+        }),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

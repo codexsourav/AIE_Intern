@@ -9,7 +9,7 @@ import '../../../../StartupDashBord/utils/client.dart';
 import '../../Components/AddImageBox.dart';
 import '../../Components/PickCalenderDate.dart';
 import '../../Components/PickGender.dart';
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 
 import '../../Components/AddUsersAppBar.dart';
 import '../../Components/StepsBar.dart';

@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:schoolpenintern/data/Network/config.dart';
 
-import '../../../../../Helper/snackBarHelper.dart';
+import '../Helper/snackBarHelper.dart';
 
 class AddUsersProvider extends ChangeNotifier {
-  final apiUrl = "http://192.168.101.88:5000";
+  final apiUrl = Config.hostUrl;
   final dio = Dio();
   // loader
   bool loading = false;

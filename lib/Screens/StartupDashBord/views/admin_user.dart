@@ -18,9 +18,9 @@ class _RoleScreenState extends State<RoleScreen> {
   ProfileController routeController = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipPath(

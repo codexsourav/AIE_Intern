@@ -21,10 +21,11 @@ class StudentProfileBloc
 
         // Chack Data VAlidate
         if (data.isNotEmpty) {
-          StudentModel studentdata =
-              StudentModel.fromJson(data[0] as Map<String, dynamic>);
+          print(data);
+          // StudentModel studentdata ="";
+          // StudentModel.fromJson(data[0] as Map<String, dynamic>);
           // Set Data and Emit
-          emit(StudentProfileShowState(studentdata));
+          // emit(StudentProfileShowState(studentdata));
         } else {
           emit(StudentErrorState("No Student Found!"));
         }

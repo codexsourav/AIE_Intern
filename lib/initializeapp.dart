@@ -6,18 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
+import 'Providers/UserProfileProvider.dart';
 import 'Routes/app_routes.dart';
 import 'Routes/routes_names.dart';
-import 'Screens/Profile/Addprofile/AddProfilePages/Provider/AddUsersProvider.dart';
+import 'Providers/AddUsersProvider.dart';
 import 'Theme/themedata.dart';
 
 class Initializeapp {
   Initializeapp._();
   static initApp({startApp}) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.white,
-      statusBarColor: Colors.white,
+      systemNavigationBarColor: Colors.transparent,
+      statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.dark,
     ));
@@ -25,6 +25,7 @@ class Initializeapp {
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => AddUsersProvider()),
+          ChangeNotifierProvider(create: (_) => UserProfileProvider()),
         ],
         child: MyApp(),
       ),
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       theme: appTheme,
       themeMode: ThemeMode.light,
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: RoutesName.startPage,
+      initialRoute: RoutesName.splash,
+      // home: StudentHomeScreen(),
     );
   }
 }

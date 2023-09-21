@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Provider/AddUsersProvider.dart';
+import '../../../../../Providers/AddUsersProvider.dart';
 import '../../Components/StepsBar.dart';
 import 'AddTeacherStepThree.dart';
 import '../../Components/AddUsersAppBar.dart';
