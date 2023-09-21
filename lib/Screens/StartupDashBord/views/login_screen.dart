@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:schoolpenintern/Screens/StartupDashBord/views/role_banner.dart';
 
 import '../constants/ConstantStrings.dart';
 import '../utils/Common_widgets.dart';
@@ -66,10 +68,11 @@ class Login extends StatelessWidget {
               child: Center(
                   child: CustomButton(
                       callback: () {
+                        
                         profileController.logIn(context, userIdController.text,
                             passWdController.text);
                       },
-                      text: ConstantString.str6)),
+                      text: "Login")),
             )
           ],
         ),

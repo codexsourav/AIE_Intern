@@ -51,9 +51,11 @@ class ChooseProfile extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.width*0.05,
+                    left: MediaQuery.of(context).size.width*0.05,
                       top: MediaQuery.of(context).size.height * 0.03),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CategoryWidget(
                         text: ConstantString.str14,
@@ -76,23 +78,28 @@ class ChooseProfile extends StatelessWidget {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.04),
-                      child: CategoryWidget(
-                        text: ConstantString.str16,
-                        callback: () {
-                          profileController.role.value = "Parent";
-                        },
-                        selectedCol: profileController.role.value == "Parent"
-                            ? ConstantColors.buttonClr
-                            : ConstantColors.textFieldClr,
+                Padding(
+                  padding:  EdgeInsets.only(left:  MediaQuery.of(context).size.width*0.05),
+                  child: Row(
+                    
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          
+                            top: MediaQuery.of(context).size.height * 0.04),
+                        child: CategoryWidget(
+                          text: ConstantString.str16,
+                          callback: () {
+                            profileController.role.value = "Parent";
+                          },
+                          selectedCol: profileController.role.value == "Parent"
+                              ? ConstantColors.buttonClr
+                              : ConstantColors.textFieldClr,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 50),

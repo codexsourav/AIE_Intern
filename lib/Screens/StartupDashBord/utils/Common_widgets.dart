@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/ConstantColors.dart';
 
-class CommonTextfield extends StatelessWidget {
+class CommonTextfield extends StatefulWidget {
   final String Text;
   final String type;
   final TextEditingController inputcontroller;
@@ -14,6 +14,12 @@ class CommonTextfield extends StatelessWidget {
       required this.type});
 
   @override
+  State<CommonTextfield> createState() => _CommonTextfieldState();
+}
+
+class _CommonTextfieldState extends State<CommonTextfield> {
+  bool showtext = false;
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -21,13 +27,39 @@ class CommonTextfield extends StatelessWidget {
           borderRadius: BorderRadius.circular(32)),
       width: MediaQuery.of(context).size.width * 0.9,
       height: 65,
-      child: TextField(
-        obscureText: type == "pwd" ? true : false,
-        controller: inputcontroller,
-        decoration: InputDecoration(
-            hintText: Text,
-            hintStyle: GoogleFonts.lato(),
-            border: OutlineInputBorder(borderSide: BorderSide.none)),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10,right: 10),
+        child: Center(
+          child: TextField(
+            obscureText: widget.type == "pwd"
+                ? showtext
+                    ? false
+                    : true
+                : false,
+            controller: widget.inputcontroller,
+            decoration: InputDecoration(
+                suffixIcon: widget.type == "pwd"
+                    ? GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showtext = !showtext;
+                          });
+                        },
+                        child: showtext == true
+                            ? Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: ConstantColors.buttonClr,
+                              )
+                            : Icon(
+                                Icons.remove_red_eye,
+                                color: ConstantColors.buttonClr,
+                              ))
+                    : null,
+                hintText: widget.Text,
+                hintStyle: GoogleFonts.lato(),
+                border: OutlineInputBorder(borderSide: BorderSide.none)),
+          ),
+        ),
       ),
     );
   }
@@ -84,11 +116,12 @@ class CategoryWidget extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: GoogleFonts.lato(fontSize: 14),
+          style: GoogleFonts.lato(fontSize: 16,color: selectedCol==ConstantColors.textFieldClr?Colors.black:Colors.white),
         )),
-        width: 120,
-        height: 55,
+        width: 150,
+        height: 47,
         decoration: BoxDecoration(
+        
             borderRadius: BorderRadius.circular(30), color: selectedCol),
       ),
     );
