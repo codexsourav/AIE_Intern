@@ -68,9 +68,9 @@ class Login extends StatelessWidget {
               child: Center(
                   child: CustomButton(
                       callback: () {
-                        //Get.to(()=>WhyUseInfoPage());
-                        // profileController.logIn(context, userIdController.text,
-                        //     passWdController.text);
+                        
+                        profileController.logIn(context, userIdController.text,
+                            passWdController.text);
                       },
                       text: "Login")),
             )
