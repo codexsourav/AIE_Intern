@@ -28,7 +28,7 @@ class _CommonTextfieldState extends State<CommonTextfield> {
       width: MediaQuery.of(context).size.width * 0.9,
       height: 65,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(left: 10,right: 10),
         child: Center(
           child: TextField(
             obscureText: widget.type == "pwd"
